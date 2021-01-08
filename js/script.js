@@ -70,6 +70,7 @@ function randomNum(min,max) {
    var i=0
   while (i<3) {
     var num = parseInt(prompt('inserisci numero da 1 a 100'))
+    i++
 
     if (num === arrayNum[i]) {
       alert('termina gioco')
