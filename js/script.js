@@ -65,7 +65,7 @@ function randomNum(min,max) {
     var num = parseInt(prompt('inserisci numero da 1 a 100'))
     i++
 
-    if (arrayNum.includes(num)) {
+    if (arrayNum.includes(num)){
       alert('termina gioco')
     }else if (arrayUtente.includes(num) ) {
       alert('hai gia inserito questo numero')
@@ -76,4 +76,8 @@ function randomNum(min,max) {
     }
   }
 
-  
+  // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
+
+   //  ogni numero scelto vale 1
+     var punteggioNumero = 1
+     var somma = 0
