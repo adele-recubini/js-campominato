@@ -79,5 +79,5 @@ function randomNum(min,max) {
   // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 
    //  ogni numero scelto vale 1
-     var punteggioNumero = 1
-     var somma = 0
+
+     console.log(arrayUtente.length);
