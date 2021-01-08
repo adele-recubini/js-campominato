@@ -25,16 +25,7 @@ function randomNum(min,max) {
     return Math.floor(Math.random() * (max + 1 - min) + min)
  }
 
- // FUNZIONE 2 MI DICE SE HO GIA INSERITO UN NUMERO
- //
- // function insertNum(insertNumber) {
- //   if (num === num) {
- //     return true;
- //   }else {
- //     return false
- //   }
- // }
- // var numeroInserito = insertNum(insertNumber)
+
 
 
 // / var randomNumber = randomNum(min,max) questa se la richiamo dentro un ciclo avra sempre quel valore cioe di un solo numero invece se la metto come var randomNum ecc mi ciclerà sempre un numero differente
@@ -44,7 +35,7 @@ function randomNum(min,max) {
 
  // step 2  --- voglio prendere 16 numeri  sempre casuali che mi sta generando la funzione sempre tra qui 100 e inserirli in un array ( vuoto)
 
-// CICLO FOR O WHILE
+// CICLO  WHILE
 // il ciclo while cicla fino a quando le condizioni non sono verificate in qeusto caso se gli diciamo che la lunghezza dell array deve essere di 16 ciclirà fino a quando non avra sedici numeri al suo interno
 
  var arrayNum = []
@@ -54,7 +45,7 @@ function randomNum(min,max) {
    var randomNumber = randomNum(min,max)
 
   if ( !arrayNum.includes(randomNumber)) {
- arrayNum.push(randomNumber)
+   arrayNum.push(randomNumber)
 }
 }
   console.log(arrayNum);
@@ -67,14 +58,10 @@ function randomNum(min,max) {
   // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 
   var arrayUtente = []
+  var scelte = 3
 
-
-
-
-
-
-   var i=0
-  while (i<3) {
+    var i=0
+    while (i < scelte) {
     var num = parseInt(prompt('inserisci numero da 1 a 100'))
     i++
 
@@ -88,3 +75,5 @@ function randomNum(min,max) {
      console.log(arrayUtente);
     }
   }
+
+  
