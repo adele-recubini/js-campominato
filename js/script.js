@@ -26,15 +26,15 @@ function randomNum(min,max) {
  }
 
  // FUNZIONE 2 MI DICE SE HO GIA INSERITO UN NUMERO IN UN CICLO FOR
-
- function insertNum(insertNumber) {
-   if (insertNumber === num) {
-     return true;
-   }else {
-     resturn false
-   }
- }
- var numeroinserito = insertNum(insertNumber)
+ //
+ // function insertNum(insertNumber) {
+ //   if (insertNumber === num) {
+ //     return true;
+ //   }else {
+ //     return false
+ //   }
+ // }
+ // var numeroInserito = insertNum(insertNumber)
 
 
 // / var randomNumber = randomNum(min,max) questa se la richiamo dentro un ciclo avra sempre quel valore cioe di un solo numero invece se la metto come var randomNum ecc mi ciclerà sempre un numero differente
@@ -66,31 +66,34 @@ function randomNum(min,max) {
 
   // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 
-  var howManyPrompt = 3
 
-  // while (howManyPrompt ) {
-  //   var num = parseInt(prompt('inserisci numero da 1 a 100'))
-  //
-  //   if (num === arrayNum) {
-  //     alert('termina gioco')
-  //   }else if (num === num) {
-  //     alert('hai gia inserito questo numero')
-  //   } else{
-  //     alert('continua')
-  //   }
-  // }
-
-  for (var i = 0; i < howManyPrompt; i++){
+   var i=0
+  while (i<3) {
     var num = parseInt(prompt('inserisci numero da 1 a 100'))
 
-    if (numeroinserito) {
-      alert('numero gia inserito')
-    } else if (num === arrayNum[i]) {
+    if (num === arrayNum[i]) {
       alert('termina gioco')
-    } else {
-      alert('calcoliamo il punteggio')
+    }else if (se il numero inserito l hai gia inserito ) {
+      alert('hai gia inserito questo numero')
+    } else{
+      alert('continuaimo il gioco ')
     }
-
-    }
-
   }
+
+
+
+  //
+  // for (var i = 0; i < howManyPrompt; i++){
+  //   var num = parseInt(prompt('inserisci numero da 1 a 100'))
+  //
+  //   if (numeroinserito) {
+  //     alert('numero gia inserito')
+  //   } else if (num === arrayNum[i]) {
+  //     alert('termina gioco')
+  //   } else {
+  //     alert('calcoliamo il punteggio')
+  //   }
+  //
+  //   }
+  //
+  // }
