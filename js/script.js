@@ -25,10 +25,10 @@ function randomNum(min,max) {
     return Math.floor(Math.random() * (max + 1 - min) + min)
  }
 
- // FUNZIONE 2 MI DICE SE HO GIA INSERITO UN NUMERO IN UN CICLO FOR
+ // FUNZIONE 2 MI DICE SE HO GIA INSERITO UN NUMERO
  //
  // function insertNum(insertNumber) {
- //   if (insertNumber === num) {
+ //   if (num === num) {
  //     return true;
  //   }else {
  //     return false
@@ -66,35 +66,25 @@ function randomNum(min,max) {
 
   // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 
+  var arrayUtente = []
+
+
+
+
+
 
    var i=0
   while (i<3) {
     var num = parseInt(prompt('inserisci numero da 1 a 100'))
     i++
 
-    if (num === arrayNum[i]) {
+    if (arrayNum.includes(num)) {
       alert('termina gioco')
-    }else if (se il numero inserito l hai gia inserito ) {
+    }else if (arrayUtente.includes(num) ) {
       alert('hai gia inserito questo numero')
-    } else{
-      alert('continuaimo il gioco ')
+    } else {
+      arrayUtente.push(num)
+      alert('continuiamo il gioco')
+     console.log(arrayUtente);
     }
   }
-
-
-
-  //
-  // for (var i = 0; i < howManyPrompt; i++){
-  //   var num = parseInt(prompt('inserisci numero da 1 a 100'))
-  //
-  //   if (numeroinserito) {
-  //     alert('numero gia inserito')
-  //   } else if (num === arrayNum[i]) {
-  //     alert('termina gioco')
-  //   } else {
-  //     alert('calcoliamo il punteggio')
-  //   }
-  //
-  //   }
-  //
-  // }
