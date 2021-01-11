@@ -15,6 +15,35 @@
 
 // FUNZIONE 1 difficolta 0 GENERA NUMERI RANDOM da uno a 100
 
+//
+// // BONUS : A quale livello vuoi giocare ?
+
+
+var levelGioco ;
+while (levelGioco !== 0 && levelGioco !==1 && levelGioco !==2) {
+  levelGioco = parseInt(prompt('a quale livello vuoi giocare ?'))
+}
+
+switch (levelGioco) {
+  case 0:
+   scelte = 84
+   min =1
+   max=100
+   break;
+  case 1:
+   scelte = 64
+   min =1
+   max=80
+  break;
+  case 1:
+   scelte = 34
+   min =1
+   max=50
+  break;
+
+}
+
+
 var min = 1;
 var max = 100;
 
@@ -36,26 +65,6 @@ function randomNum(min,max) {
 
    return true;
  }
-
- //  fine funzione 2 per la validazione dell input
-//
-//  // FUNZIONE 2 difficolta 1 genera numeri randomi da 1 a 80
-//  var min = 1;
-//  var max = 80;
-//
-//  function randomNumFirst(min,max) {
-//      return Math.floor(Math.random() * (max + 1 - min) + min)
-//   }
-//
-// // FUNZIONE 3 difficolta 2 genera numeri random da 1 a 50
-// var min = 1;
-// var max = 50;
-//
-// function randomNumSecond(min,max) {
-//     return Math.floor(Math.random() * (max + 1 - min) + min)
-//  }
-// //
-
 
 
 
@@ -91,33 +100,39 @@ function randomNum(min,max) {
   var scelte = 84
 
     var i=0
-    while (i < scelte) {
-    var num = parseInt(prompt('inserisci numero da 1 a 100'))
-    i++
+    var num;
+    while (i < scelte && !arrayNum.includes(num)) {
+     num = parseInt(prompt('inserisci numero da 1 a 100'))
+
     // qui la funzione 2  per la validazione dell input
     // vedere se inserisce esattamente quello che chiediamo andiamo avanti
-     if (isValid(num)) {}
+     if (isValid(num)) {
+
 
       // se il numero inserito fa parte dei numeri bomba
      if (arrayNum.includes(num)){
       alert('termina gioco')
-      break
-
    }
      // se il numero è gia inserito
      else if (arrayUtente.includes(num)) {
       alert('hai gia inserito questo numero')
     }
 
+
    // allora metti i numeri inseriti nell array e calcola il punteggio
     else {
       arrayUtente.push(num)
+      i++
       alert('continuiamo il gioco')
      console.log(arrayUtente);
     }
     if (arrayUtente.length === scelte) {
       alert('hai vinto ')
     }
+  }else {
+     alert('che fai?')
+
+  }
   }
 
 
@@ -128,21 +143,27 @@ function randomNum(min,max) {
      //
      // // BONUS : A quale livello vuoi giocare ?
 
-     //
-     // var levelGioco = prompt('a quale livello vuoi giocare ?')
-     // var levelZero = 0 //-- numeri da 1 a 100 --
-     // var levelFirst = 1 //-- numeri da 1 a 80 --
-     // var levelSecond = 2 //-- numeri da 1 a 50 --
-     //
-     // switch (levelGioco) {
-     //   case levelZero:
-     //
-     //     break;
-     //    case levelFirst:
-     //
-     //      break;
-     //    case  levelSecond:
-     //
-     //      break;
-     //
-     // }
+
+     var levelGioco ;
+     while (levelGioco !== 0 && levelGioco !==1 && levelGioco !==2) {
+       levelGioco = parseInt(prompt('a quale livello vuoi giocare ?'))
+     }
+     switch (levelGioco) {
+       case 0:
+        scelte = 84
+        min =1
+        max=100
+        break;
+
+       case 1:
+        scelte = 64
+        min =1
+        max=80
+       break;
+       
+       case 2:
+        scelte = 34
+        min =1
+        max=50
+       break;
+     }
