@@ -15,7 +15,7 @@
 
 var levelGioco ;
 while (levelGioco !== 0 && levelGioco !==1 && levelGioco !==2) {
-  levelGioco = parseInt(prompt('a quale livello vuoi giocare ?'))
+  levelGioco = parseInt(prompt('a quale livello vuoi giocare  0 numeri da 1 a 100 1 numeri da 1 a 80 2 numeri da 1 a 50 ?'))
 }
 // lo switch mi gestira i casi delle variabili che sono delle costanti nelle mie funzioni e che andranno a popolarsi nei vari casi
 
