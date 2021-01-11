@@ -5,24 +5,19 @@
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
-//BONUS: (da fare solo se funziona tutto il resto)
+//BONUS:
 // all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
 // con difficoltà 0 => tra 1 e 100
 // con difficoltà 1 =>  tra 1 e 80
 // con difficoltà 2 => tra 1 e 50
 
-// step 1  --- genero un numero casuale da 1 a 100
-
-// FUNZIONE 1 difficolta 0 GENERA NUMERI RANDOM da uno a 100
-
-//
-// // BONUS : A quale livello vuoi giocare ?
-
+//  chiedo a quale livello vuole giocare  il ciclo while mi serve perche se non inserisce o 0 o 1 o 2 torna al prompt
 
 var levelGioco ;
 while (levelGioco !== 0 && levelGioco !==1 && levelGioco !==2) {
   levelGioco = parseInt(prompt('a quale livello vuoi giocare ?'))
 }
+// lo switch mi gestira i casi delle variabili che sono delle costanti nelle mie funzioni e che andranno a popolarsi nei vari casi
 
 switch (levelGioco) {
   case 0:
@@ -35,25 +30,23 @@ switch (levelGioco) {
    min =1
    max=80
   break;
-  case 1:
+  case 2:
    scelte = 34
    min =1
    max=50
   break;
-
 }
 
-
+//  FUNZIONE 1 --- mi genera numeri randomici
 var min = 1;
 var max = 100;
 
 function randomNum(min,max) {
     return Math.floor(Math.random() * (max + 1 - min) + min)
  }
- //  fine FUNZIONE 1 difficolta 0 GENERA NUMERI RANDOM da uno a 100
-
 
  // FUNZIONE 2 per la validazione dell input
+
  function isValid(inputString) {
 
    if(isNaN(inputString)) {
@@ -62,20 +55,10 @@ function randomNum(min,max) {
    if (inputString > 100 || inputString < 0) {
      return false;
    }
-
-   return true;
+    return true;
  }
 
-
-
-
-// / var randomNumber = randomNum(min,max) questa se la richiamo dentro un ciclo avra sempre quel valore cioe di un solo numero invece se la metto come var randomNum ecc mi ciclerà sempre un numero differente
-
- // step 2  --- voglio prendere 16 numeri  sempre casuali che mi sta generando la funzione sempre tra qui 100 e inserirli in un array ( vuoto)
-
-// CICLO  WHILE
-// il ciclo while cicla fino a quando le condizioni non sono verificate in qeusto caso se gli diciamo che la lunghezza dell array deve essere di 16 ciclirà fino a quando non avra sedici numeri al suo interno
-
+// POPOLO con un ciclo while un array di numeri che saranno le bombe
  var arrayNum = []
  var howManyNumber = 16
 
@@ -88,13 +71,7 @@ function randomNum(min,max) {
 }
   console.log(arrayNum);
 
-  // STEP 2 --- chiedo all utente di inserire 3 volte un numero sapendo che
-  // L’utente non può inserire più volte lo stesso numero.
-
-  // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
-
-  // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
-
+// ciclo while con tutte le condizioni del gioco
 
   var arrayUtente = []
   var scelte = 84
@@ -102,12 +79,9 @@ function randomNum(min,max) {
     var i=0
     var num;
     while (i < scelte && !arrayNum.includes(num)) {
-     num = parseInt(prompt('inserisci numero da 1 a 100'))
-
-    // qui la funzione 2  per la validazione dell input
-    // vedere se inserisce esattamente quello che chiediamo andiamo avanti
+     num = parseInt(prompt('inserisci numeri'))
+      // funzione richiamata con il notro srgomento (validazione dell input )che si chiude piu in fondo perche per tutto il gioco deve validare i parametri inseriti vicino al secondo else
      if (isValid(num)) {
-
 
       // se il numero inserito fa parte dei numeri bomba
      if (arrayNum.includes(num)){
@@ -117,7 +91,6 @@ function randomNum(min,max) {
      else if (arrayUtente.includes(num)) {
       alert('hai gia inserito questo numero')
     }
-
 
    // allora metti i numeri inseriti nell array e calcola il punteggio
     else {
@@ -137,33 +110,6 @@ function randomNum(min,max) {
 
 
   // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
-  // ogni numero scelto vale 1
+  // ogni numero scelto vale 1 quindi mettendo length comincerà a contare da uno
 
      console.log(arrayUtente.length);
-     //
-     // // BONUS : A quale livello vuoi giocare ?
-
-
-     var levelGioco ;
-     while (levelGioco !== 0 && levelGioco !==1 && levelGioco !==2) {
-       levelGioco = parseInt(prompt('a quale livello vuoi giocare ?'))
-     }
-     switch (levelGioco) {
-       case 0:
-        scelte = 84
-        min =1
-        max=100
-        break;
-
-       case 1:
-        scelte = 64
-        min =1
-        max=80
-       break;
-       
-       case 2:
-        scelte = 34
-        min =1
-        max=50
-       break;
-     }
