@@ -88,7 +88,7 @@ function randomNum(min,max) {
 
 
   var arrayUtente = []
-  var scelte = 3
+  var scelte = 84
 
     var i=0
     while (i < scelte) {
@@ -101,6 +101,8 @@ function randomNum(min,max) {
       // se il numero inserito fa parte dei numeri bomba
      if (arrayNum.includes(num)){
       alert('termina gioco')
+      break
+
    }
      // se il numero è gia inserito
      else if (arrayUtente.includes(num)) {
@@ -113,7 +115,7 @@ function randomNum(min,max) {
       alert('continuiamo il gioco')
      console.log(arrayUtente);
     }
-    if (arrayUtente !== arrayNum) {
+    if (arrayUtente.length === scelte) {
       alert('hai vinto ')
     }
   }
